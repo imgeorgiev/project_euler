@@ -22,9 +22,18 @@ def to_binary(n):
     return bin(n)[2:]
 
 def is_prime(n):
-    for i in range(2, int(np.sqrt(n))+1):
-        if n%i == 0:
+    if n in {2, 3, 5, 7}:
+        return True
+    if n < 2 or n%2 == 0:
+        return False
+    if n%3 == 0 or n%5 == 0:
+        return False
+    r = int(n**0.5)
+    f = 5
+    while f <= r:
+        if n%f == 0 or n%(f+2) == 0:
             return False
+        f += 6
     return True
 
 def divisors(n):
