@@ -48,3 +48,10 @@ def factorial(n):
     for i in range(1,n+1):
         prod *= i
     return prod
+
+def is_pandigital(num, n):
+    num_str = str(num)
+    for i in range(1, n+1):
+        if str(i) not in num_str:
+            return False
+    return True
