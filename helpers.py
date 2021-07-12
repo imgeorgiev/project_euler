@@ -51,7 +51,7 @@ def factorial(n):
 
 def is_pandigital(num, n):
     num_str = str(num)
-    for i in range(1, n+1):
+    for i in range(0, n+1):
         if str(i) not in num_str:
             return False
     return True
