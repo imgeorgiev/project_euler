@@ -94,3 +94,24 @@ def gen_primes():
 
         q += 1
 
+def num_to_digit_list(num):
+    lst = []
+    while num > 10:
+        lst.append(num%10)
+        num = num // 10
+    lst.append(num)
+    return lst[::-1]
+
+def digit_list_to_num(digits):
+    num = 0
+    for i, n in enumerate(digits[::-1]):
+        num += n * 10**i
+    return num
+
+def is_to_power(num, p):
+    delim = (num ** (1/p)) % 1
+    if -0.001 < delim < 0.000000001:
+        return True
+    if delim > 0.9999999999:
+        return True
+    return False
